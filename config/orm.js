@@ -14,7 +14,6 @@ const orm = {
             , (err, res) => {
 
                 if (err) throw err;
-
                 return res;
 
             });
@@ -59,11 +58,7 @@ const orm = {
                 return res;
 
             });
-
-
     }
-
-
 };
 
 
