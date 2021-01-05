@@ -4,59 +4,35 @@ const orm = {
 
     selectAll(table, cb) {
 
-        connection.query(`
-        
-        SELECT 
-        *
-        FROM
-        ${table}
-        `
-            , (err, res) => {
+        connection.query(`SELECT * FROM ${table}`,
+            (err, res) => {
 
                 if (err) throw err;
-
-
                 cb(res);
+
             });
-
-
     },
 
-    insertOne(table, burgerName) {
-        connection.query(`
+    insertOne(table, column, value, cb) {
 
-        INSERT INTO 
-        burgers
-        VALUES('${id}', '${burgerName}', false);
-        
-        
-        `
-            , (err, res) => {
+        connection.query(`INSERT INTO ${table} (${column}) VALUES ('${value}');`,
+            (err, res) => {
 
                 if (err) throw err;
                 console.log(res);
-                return res;
+                cb(res);
 
             });
 
 
     },
 
-    updateOne(id) {
-        connection.query(`
-
-        UPDATE
-        burgers
-        SET devoured = true
-        WHERE
-            id = ${id};       
-        
-        `
-            , (err, res) => {
+    updateOne(table, id, cb) {
+        connection.query(`UPDATE ${table} SET devoured = true WHERE id = ${id};`,
+            (err, res) => {
 
                 if (err) throw err;
-                console.table(res);
-                return res;
+                cb(res);
 
             });
     }
