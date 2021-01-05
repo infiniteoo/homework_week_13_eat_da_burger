@@ -3,17 +3,15 @@ const orm = require('./config/orm.js');
 const burger = {
 
     selectAll(cb) {
-        orm.selectAll((res) => {
-            cb(res);
-        })
+        orm.selectAll("burgers", res => cb(res));
+    },
+    insertOne(column, value, cb) {
+        orm.insertOne("burgers", column, value, res => cb(res));
+    },
+    updateOne(id, cb) {
+        orm.updateOne("burgers", id, res => cb(res));
     }
-
-
-
-
-
 }
-// create the code that will call the ORM functions using burger specific input for the ORM.
 
 module.exports = burger;
 
