@@ -2,26 +2,27 @@ const connection = require('connection.js');
 
 const orm = {
 
-    selectAll() {
+    selectAll(table, cb) {
 
         connection.query(`
         
         SELECT 
         *
         FROM
-        burgers
+        ${table}
         `
             , (err, res) => {
 
                 if (err) throw err;
-                return res;
 
+
+                cb(res);
             });
 
 
     },
 
-    insertOne(id, burgerName) {
+    insertOne(table, burgerName) {
         connection.query(`
 
         INSERT INTO 

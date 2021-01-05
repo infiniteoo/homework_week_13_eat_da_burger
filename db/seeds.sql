@@ -1,9 +1,7 @@
-INSERT INTO burgers VALUES (1,'Double Cheeseburger', false);
-INSERT INTO burgers VALUES (2,'Big Mac', false);
-INSERT INTO burgers VALUES (3,'Spicy Chicken Sandwich', false);
+INSERT INTO burgers (burger_name) VALUES ('Double Cheeseburger');
+INSERT INTO burgers (burger_name) VALUES ('Turkey Burger');
+INSERT INTO burgers (burger_name) VALUES ('Big Mac');
 
 
-SELECT
-* 
-FROM 
-burgers;
+
+
