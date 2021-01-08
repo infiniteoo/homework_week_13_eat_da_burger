@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 connection.connect(err => {
 
     if (err) throw err;
-    console.log(`Connected to ${connection.config.host} on port ${connection.config.port}`);
+    console.log(`Connected to MYSQL database: ${connection.config.host} on port ${connection.config.port}`);
 
 });
 
