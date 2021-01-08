@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center">Burger Eater Simulator</h1>
+    <h1 class="text-center">Burger Eating Simulator</h1>
     <hr>
 
     <!--  image left  -->
@@ -16,7 +16,7 @@
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-
+                        {{> not-devoured-block devoured=true}}
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -34,7 +34,7 @@
                     <h1 class="display-3"><b>Burgers:</b> Devoured</h1>
                     {{#each burgers}}
                     {{#if devoured}}
-
+                    {{!-- {{> burgers/devoured-block devoured=false}} --}}
                     {{/if}}
                     {{/each}}
                 </div>
