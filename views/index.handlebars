@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6">
 
-            <img src="https://assets.stickpng.com/images/5882482de81acb96424ffaac.png" alt="" class="w-75" />
+            <img src='/assets/img/burger2.png' alt="" class="w-100" />
         </div>
         <!-- /.col-md-6 -->
         <div class="col-md-6">
@@ -34,7 +34,7 @@
                     <h1 class="display-3"><b>Burgers:</b> Devoured</h1>
                     {{#each burgers}}
                     {{#if devoured}}
-                    {{!-- {{> burgers/devoured-block devoured=false}} --}}
+                    {{> devoured-block devoured=false}}
                     {{/if}}
                     {{/each}}
                 </div>
