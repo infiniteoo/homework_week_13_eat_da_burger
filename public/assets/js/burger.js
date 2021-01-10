@@ -1,6 +1,6 @@
-$(function () {
+$(() => {
     $(".card-body").on("submit", function (event) {
-        // Make sure to preventDefault on a submit event.
+
         event.preventDefault();
 
         let newBurger = {
@@ -8,17 +8,17 @@ $(function () {
             devoured: 0,
         };
 
-        // Send the POST request.
-        $.ajax("/api/burgers", {
+
+        $.ajax('/api/burgers', {
             type: "POST",
             data: newBurger,
         }).then(function () {
-            // Reloads the page to get the updated list
+
             location.reload();
         });
     });
 
-    $(".eat").on("click", function () {
+    $(".eat").on('click', () => {
         let id = $(this).data("id");
         let newDevoured = $(this).data("newDevoured");
 
@@ -34,7 +34,7 @@ $(function () {
         });
     });
 
-    $(".trash").on("click", function () {
+    $(".trash").on("click", () => {
         let id = $(this).data("id");
         $.ajax(`/api/burgers/${id}`, {
             type: "DELETE",
@@ -42,8 +42,4 @@ $(function () {
             location.reload();
         });
     });
-
-    // $(".trashBurger").on(
-    //   let id = $(this).data("id");
-    // )
 });
