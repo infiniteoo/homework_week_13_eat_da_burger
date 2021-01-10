@@ -27,8 +27,8 @@ const orm = {
 
     },
 
-    updateOne(table, id, cb) {
-        connection.query(`UPDATE ${table} SET devoured = true WHERE id = ${id};`,
+    updateOne(table, column, boolean, condition, cb) {
+        connection.query(`UPDATE ${table} SET ${column} = ${boolean} WHERE ${condition};`,
             (err, res) => {
 
                 if (err) throw err;
