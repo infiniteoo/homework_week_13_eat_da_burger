@@ -1,6 +1,10 @@
+/**
+ *  custom burger model utilizing generic mysql orm
+ */
+
 const orm = require('../config/orm');
 
-const burger = {
+module.exports = burger = {
 
     selectAll(cb) {
         orm.selectAll("burgers", res => cb(res));
@@ -14,7 +18,7 @@ const burger = {
     deleteOne(condition, cb) {
         orm.deleteOne("burgers", condition, res => cb(res));
     }
-}
+};
 
-module.exports = burger;
+
 

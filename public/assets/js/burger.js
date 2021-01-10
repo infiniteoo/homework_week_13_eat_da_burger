@@ -1,5 +1,5 @@
 /**
- *  server side javascript to handle events and html methods
+ *  front end javascript to handle events and html methods
  *  props to meech the dj for inspiration on this code
  */
 
