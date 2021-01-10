@@ -12,7 +12,6 @@ if (process.env.JAWSDB_URL) {
         password: "blahblah",
         port: 3306,
         database: "burgers_db"
-
     });
 }
 
