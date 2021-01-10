@@ -1,5 +1,5 @@
 /**
- * BASIC SERVER CONFIGURATION 
+ * B A S I C  S E R V E R  C O N F I G U R A T I O N  
  */
 
 const express = require('express');
@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000
 
 
 /**
- * MIDDLEWEAR
+ * M I D D L E W E A R
  */
 
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 /**
- * HANDLEBARS INTEGRATION
+ * H A N D L E B A R S   I N T E G R A T I O N 
  */
 
 app.engine('handlebars', expressHandlebars({
@@ -30,7 +30,7 @@ app.set('view engine', 'handlebars');
 
 
 /**
- * ROUTE INTEGRATION
+ * R O U T E    I N T E G R A T I O N 
  */
 
 const routes = require('./controllers/burgers_controller');
@@ -38,7 +38,7 @@ app.use(routes);
 
 
 /**
- * LAUNCH THE SERVER
+ * L A U N C H    T H E    S E R V E R 
  */
 
 app.listen(port, () => console.log(

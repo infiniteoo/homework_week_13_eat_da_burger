@@ -6,6 +6,11 @@ const connection = require(`../config/connection`);
 
 const orm = {
 
+    /**
+     *  S E L E C T  A L L 
+     *  grabs everything from a database
+     */
+
     selectAll(table, cb) {
 
         connection.query(`SELECT * FROM ${table}`,
@@ -16,6 +21,11 @@ const orm = {
 
             });
     },
+
+    /**
+     *  I N S E R T  O N E 
+     *  adds a new row to the database
+     */
 
     insertOne(table, column, value, cb) {
 
@@ -30,6 +40,11 @@ const orm = {
             });
     },
 
+    /**
+     *  U P D A T E  O N E 
+     *  updates a column in a row in the database
+     */
+
     updateOne(table, column, boolean, condition, cb) {
         connection.query(`UPDATE ${table} SET ${column} = ${boolean} WHERE ${condition};`,
 
@@ -40,6 +55,11 @@ const orm = {
 
             });
     },
+
+    /**
+     *  D E L E T E  O N E 
+     *  deletes a row from the database
+     */
 
     deleteOne(table, condition, cb) {
         connection.query(`DELETE FROM ${table} WHERE ${condition};`,
