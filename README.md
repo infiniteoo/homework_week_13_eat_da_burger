@@ -5,7 +5,7 @@
 ![example gif](/example/example.gif)
 
 download link to high quality video:
-https://drive.google.com/file/d/1YbqimuRvtM3lgH3ySsMzU62W160yImgI/view
+
 
 ### Overview
 
