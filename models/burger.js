@@ -10,6 +10,9 @@ const burger = {
     },
     updateOne(column, bool, condition, cb) {
         orm.updateOne("burgers", column, bool, condition, res => cb(res));
+    },
+    deleteOne(condition, cb) {
+        orm.deleteOne("burgers", condition, res => cb(res));
     }
 }
 

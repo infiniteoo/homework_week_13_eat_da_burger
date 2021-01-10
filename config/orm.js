@@ -35,6 +35,14 @@ const orm = {
                 cb(res);
 
             });
+    },
+
+    deleteOne(table, condition, cb) {
+        connection.query(`DELETE FROM ${table} WHERE ${condition};`,
+            (err, res) => {
+                if (err) throw err;
+                cb(res);
+            });
     }
 };
 
