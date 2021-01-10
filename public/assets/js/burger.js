@@ -1,45 +1,37 @@
 $(() => {
-    $(".card-body").on("submit", function (event) {
+    $(`.card-body`).on(`submit`, (event) => {
 
         event.preventDefault();
 
         let newBurger = {
-            burger_name: $("#burger_name").val().trim(),
+            burger_name: $(`#burger_name`).val().trim(),
             devoured: 0,
         };
 
-
-        $.ajax('/api/burgers', {
-            type: "POST",
+        $.ajax(`/api/burgers`, {
+            type: `POST`,
             data: newBurger,
-        }).then(function () {
-
-            location.reload();
-        });
+        }).then(() => location.reload());
     });
 
-    $(".eat").on('click', () => {
-        let id = $(this).data("id");
-        let newDevoured = $(this).data("newDevoured");
+    $(`.eat`).on(`click`, () => {
+        let id = $(this).data(`id`);
+        let newDevoured = $(this).data(`newDevoured`);
 
         let newDevouredBurger = {
             devoured: newDevoured,
         };
 
         $.ajax(`/api/burgers/${id}`, {
-            type: "PUT",
+            type: `PUT`,
             data: newDevouredBurger,
-        }).then(() => {
-            location.reload();
-        });
+        }).then(() => location.reload());
     });
 
-    $(".trash").on("click", () => {
-        let id = $(this).data("id");
+    $(`.trash`).on(`click`, () => {
+        let id = $(this).data(`id`);
         $.ajax(`/api/burgers/${id}`, {
-            type: "DELETE",
-        }).then(() => {
-            location.reload();
-        });
+            type: `DELETE`,
+        }).then(() => location.reload());
     });
 });
